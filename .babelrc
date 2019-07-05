@@ -1,0 +1,43 @@
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    [
+      "styled-components",
+      {
+        "ssr": true,
+        "displayName": true,
+        "preprocess": false
+      }
+    ],
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "libraryDirectory": "es"
+      },
+      {
+        "libraryName": "lodash",
+        "libraryDirectory": ""
+      }
+    ],
+    [
+      "babel-plugin-root-import",
+      {
+        "paths": [
+          {
+            "rootPathPrefix": "~",
+            "rootPathSuffix": "./"
+          },
+          {
+            "rootPathPrefix": "%",
+            "rootPathSuffix": "./components"
+          },
+          {
+            "rootPathPrefix": "#",
+            "rootPathSuffix": "./app-pages"
+          }
+        ]
+      }
+    ]
+  ]
+}

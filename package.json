@@ -1,0 +1,32 @@
+{
+  "name": "pop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vandyw95/pop.git"
+  },
+  "keywords": [],
+  "author": "Vandy Cheung",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/vandyw95/pop/issues"
+  },
+  "homepage": "https://github.com/vandyw95/pop#readme",
+  "dependencies": {
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "styled-components": "^5.0.0-beta.8"
+  },
+  "devDependencies": {
+    "babel-plugin-root-import": "^6.2.0",
+    "babel-plugin-styled-components": "^1.10.5"
+  }
+}
