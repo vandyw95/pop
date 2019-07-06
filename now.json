@@ -1,5 +1,6 @@
 {
   "version": 2,
   "alias": "pop-app",
-  "name": "pop"
+  "name": "pop",
+  "builds": [{ "src": "next.config.js", "use": "@now/next" }]
 }

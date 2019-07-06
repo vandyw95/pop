@@ -26,8 +26,8 @@ export default class MyApp extends App {
 
     return (
       <Container>
+        <GlobalStyles />
         <ThemeProvider theme={DEFAULT_THEME}>
-          <GlobalStyles />
           <Component {...pageProps} />
         </ThemeProvider>
       </Container>

@@ -20,12 +20,14 @@
   },
   "homepage": "https://github.com/vandyw95/pop#readme",
   "dependencies": {
+    "antd": "^3.20.0",
     "next": "^8.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "styled-components": "^5.0.0-beta.8"
   },
   "devDependencies": {
+    "babel-plugin-import": "^1.12.0",
     "babel-plugin-root-import": "^6.2.0",
     "babel-plugin-styled-components": "^1.10.5"
   }

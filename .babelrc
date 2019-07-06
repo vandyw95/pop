@@ -15,10 +15,15 @@
         "libraryName": "antd",
         "libraryDirectory": "es"
       },
+      "antd"
+    ],
+    [
+      "import",
       {
         "libraryName": "lodash",
         "libraryDirectory": ""
-      }
+      },
+      "lodash"
     ],
     [
       "babel-plugin-root-import",
