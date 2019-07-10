@@ -13,36 +13,17 @@
       "import",
       {
         "libraryName": "antd",
-        "libraryDirectory": "es"
+        "style": true
       },
       "antd"
-    ],
-    [
-      "import",
-      {
-        "libraryName": "lodash",
-        "libraryDirectory": ""
-      },
-      "lodash"
-    ],
-    [
-      "babel-plugin-root-import",
-      {
-        "paths": [
-          {
-            "rootPathPrefix": "~",
-            "rootPathSuffix": "./"
-          },
-          {
-            "rootPathPrefix": "%",
-            "rootPathSuffix": "./components"
-          },
-          {
-            "rootPathPrefix": "#",
-            "rootPathSuffix": "./app-pages"
-          }
-        ]
-      }
     ]
+    // [
+    //   "import",
+    //   {
+    //     "libraryName": "lodash",
+    //     "libraryDirectory": ""
+    //   },
+    //   "lodash"
+    // ]
   ]
 }

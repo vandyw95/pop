@@ -1,8 +1,8 @@
-import App, { Container } from 'next/app';
 import React from 'react';
+import App, { Container } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 
-import GlobalStyles from '~/config/global-styles';
+import GlobalStyles from 'global-styles';
 
 const DEFAULT_THEME = {
   colors: {
