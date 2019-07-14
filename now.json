@@ -2,5 +2,8 @@
   "version": 2,
   "alias": "pop-app",
   "name": "pop",
-  "builds": [{ "src": "next.config.js", "use": "@now/next" }]
+  "builds": [{ "src": "next.config.js", "use": "@now/next" }],
+  "routes": [
+    { "src": "/profile/(?<userId>[^/]+)", "dest": "/profile?userId=$userId" }
+  ]
 }
