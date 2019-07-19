@@ -2,13 +2,10 @@ import React from 'react';
 import App, { Container } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 
-import GlobalStyles from 'global-styles';
+import Layout from 'layout';
 
-const DEFAULT_THEME = {
-  colors: {
-    primary: '#0070f3'
-  }
-};
+import GlobalStyles from 'global-styles';
+import { DEFAULT_THEME } from 'styled-theme';
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -28,7 +25,9 @@ export default class MyApp extends App {
       <Container>
         <GlobalStyles />
         <ThemeProvider theme={DEFAULT_THEME}>
-          <Component {...pageProps} />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </ThemeProvider>
       </Container>
     );
