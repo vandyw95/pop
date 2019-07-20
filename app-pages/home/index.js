@@ -18,8 +18,6 @@ function Home({ initialProfiles }) {
     handleRevert
   } = useUserActionEngine(initialProfiles);
 
-  console.log(users);
-
   return (
     <PageWrapper>
       {users.map(
