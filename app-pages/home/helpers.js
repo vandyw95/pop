@@ -28,7 +28,6 @@ export function useUserActionEngine(initialProfiles) {
 
   const handleVisitProfile = () => {
     const { id: userId } = getCurrentUser();
-    console.log('Visited!');
     push({
       pathname: '/profile',
       query: { userId }
@@ -36,26 +35,36 @@ export function useUserActionEngine(initialProfiles) {
   };
 
   const handleFetchMore = async () => {
-    // const DUMMY_RES = await fetch(
-    //   'https://api.github.com/repos/zeit/next.js'
-    // ).then(res => res.json());
-    // console.log('User liked!', { DUMMY_USERS, DUMMY_RES });
-    setUsers([...users, ...DUMMY_USERS]);
+    const DUMMY_RES = await fetch('https://api.github.com/repos/zeit/next.js')
+      .then(res => res.json())
+      .catch(console.log);
+    if (!DUMMY_RES.message) {
+      setUsers([...users, ...DUMMY_USERS]);
+      console.log('User Fetched!', { DUMMY_USERS, DUMMY_RES });
+    } else {
+      console.log('User Fetch Error!', { DUMMY_USERS, DUMMY_RES });
+      handleFetchMore();
+    }
   };
 
-  const handleLike = async e => {
-    e.stopPropagation();
+  const handleLike = async () => {
     const [first, ...rest] = users;
     setUsers(rest);
     setPastUsers([first, ...pastUsers]);
-    // const DUMMY_RES = await fetch(
-    //   'https://api.github.com/repos/zeit/next.js'
-    // ).then(res => res.json());
-    // console.log('User liked!', { id: first.id, DUMMY_RES });
+    const DUMMY_RES = await fetch('https://api.github.com/repos/zeit/next.js')
+      .then(res => res.json())
+      .catch(err => {
+        const rolledbackPastUsers = pastUsers.filter(
+          ({ id }) => id !== first.id
+        );
+        setPastUsers(rolledbackPastUsers);
+        console.log('Like Error!!!', { DUMMY_RES });
+        return err;
+      });
+    console.log('Liked!!!', { DUMMY_RES });
   };
 
-  const handleDislike = async e => {
-    e.stopPropagation();
+  const handleDislike = async () => {
     const [first, ...rest] = users;
     setUsers(rest);
     setPastUsers([first, ...pastUsers]);
@@ -65,8 +74,7 @@ export function useUserActionEngine(initialProfiles) {
     // console.log('User disliked!', { id: first.id, DUMMY_RES });
   };
 
-  const handleSuperLike = async e => {
-    e.stopPropagation();
+  const handleSuperLike = async () => {
     const [first, ...rest] = users;
     setUsers(rest);
     setPastUsers([first, ...pastUsers]);
@@ -76,9 +84,8 @@ export function useUserActionEngine(initialProfiles) {
     // console.log('User super-liked!', { id: first.id, DUMMY_RES });
   };
 
-  const handleRevert = async e => {
+  const handleRevert = async () => {
     if (pastUsers.length) {
-      e.stopPropagation();
       const [first, ...rest] = pastUsers;
       setUsers([first, ...users]);
       setPastUsers(rest);
