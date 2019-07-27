@@ -1,0 +1,45 @@
+{
+  "name": "pop-app",
+  "author": "Vandy Cheung",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Front end application of pop",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vandyw95/pop.git"
+  },
+  "keywords": [],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/vandyw95/pop/issues"
+  },
+  "homepage": "https://github.com/vandyw95/pop#readme",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "analyze": "BUNDLE_ANALYZE=both next build",
+    "analyze:server": "BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "BUNDLE_ANALYZE=browser next build"
+  },
+  "dependencies": {
+    "@next/bundle-analyzer": "^9.0.0",
+    "@zeit/next-less": "^1.0.1",
+    "antd": "^3.20.1",
+    "isomorphic-unfetch": "^3.0.0",
+    "less": "^3.9.0",
+    "less-vars-to-js": "1.3.0",
+    "next": "^8.1.0",
+    "next-compose-plugins": "^2.2.0",
+    "null-loader": "3.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "styled-components": "^5.0.0-beta.8"
+  },
+  "devDependencies": {
+    "babel-plugin-import": "^1.12.0",
+    "babel-plugin-styled-components": "^1.10.5"
+  }
+}

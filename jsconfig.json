@@ -6,8 +6,8 @@
     "baseUrl": "./",
     "paths": {
       "~/*": ["./*"],
-      "%/*": ["./components/*"],
-      "#/*": ["./app-pages/*"]
+      "%/*": ["./www/components/*"],
+      "#/*": ["./www/app-pages/*"]
     }
   }
 }

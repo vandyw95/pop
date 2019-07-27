@@ -1,0 +1,21 @@
+{
+  "name": "pop-api",
+  "author": "Vandy Cheung",
+  "version": "1.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "description": "The service provider for pop app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vandyw95/pop.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vandyw95/pop/issues"
+  },
+  "homepage": "https://github.com/vandyw95/pop#readme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {}
+}
