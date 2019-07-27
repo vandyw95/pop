@@ -15,7 +15,16 @@
   "homepage": "https://github.com/vandyw95/pop#readme",
   "main": "index.js",
   "scripts": {
+    "start": "micro",
+    "dev": "micro-dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "apollo-server-micro": "^2.7.2",
+    "graphql": "^14.4.2",
+    "micro": "^9.3.4"
+  },
+  "devDependencies": {
+    "micro-dev": "^3.0.0"
+  }
 }
