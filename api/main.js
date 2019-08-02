@@ -1,4 +1,6 @@
 import { ApolloServer } from 'apollo-server-micro';
+import url from 'url';
+import { MongoClient } from 'mongodb';
 
 import typeDefs from './type-defs';
 import resolvers from './resolvers';
@@ -6,17 +8,34 @@ import resolvers from './resolvers';
 const apolloServer = new ApolloServer({
   typeDefs,
   resolvers,
-  introspection: true,
+  // introspection: true,
   playground: true
 });
 
-// Some have issue with request, keep this in advance
-// https://spectrum.chat/next-js/general/apollo-server-micro-as-an-api-route~6133e1f2-5f93-4dc5-9ff5-e7d1f7b86505
-// https://gist.github.com/mfellner/2119db3584023092d70118a8dabd146e#file-graphql-ts-L19-L23
-// export const config = {
-//   api: {
-//     bodyParser: false
-//   }
-// };
+let cachedDb = null;
+console.log('Current connected DB: ', cachedDb);
+console.log('Current MongoDB & "secret": ', process.env.MONGODB_URI);
+
+async function connectToDatabase(uri) {
+  if (cachedDb) return cachedDb;
+
+  console.log('Connecting to DB...............................');
+  const client = await MongoClient.connect(uri, {
+    useNewUrlParser: true
+  });
+  // .then(() => console.log('Connected to POP Atlas cluster'))
+  // .catch(err => console.log('=========Error=========', err));
+
+  console.log('AWAITING...............................');
+  const db = await client.db(url.parse(uri).pathname.substr(1));
+
+  cachedDb = db;
+  console.log('===============');
+  console.log('Connected!', db);
+  console.log('===============');
+  return db;
+}
+
+const db = connectToDatabase(process.env.MONGODB_URI);
 
 export default apolloServer.createHandler({ path: '/api/graphql' });
