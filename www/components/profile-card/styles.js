@@ -1,14 +1,18 @@
 import styled from 'styled-components';
 import { Card as AntdCard, Button as AntdButton } from 'antd';
 
+function getZ({ isOnTop = false }) {
+  return `z-index: ${isOnTop ? 10 : 1};`;
+}
+
 export const Card = styled(({ isOnTop, ...antdProps }) => (
   <AntdCard {...antdProps} />
 ))`
+  ${getZ}
   width: 300px;
   left: calc(50% - 150px);
   top: calc(50% - 315px);
   position: absolute;
-  z-index: ${({ isOnTop }) => (isOnTop ? 10 : 1)};
   &div,
   .ant-card-body {
     padding: 0 !important;
