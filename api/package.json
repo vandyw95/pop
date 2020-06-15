@@ -20,7 +20,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "apollo-server-micro": "^2.7.2",
+    "apollo-server-micro": "^2.14.2",
     "esm": "^3.2.25",
     "graphql": "^14.4.2",
     "micro": "^9.3.4",
