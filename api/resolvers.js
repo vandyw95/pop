@@ -1,3 +1,5 @@
+import { sampleMflix } from './query';
+
 const books = [
   { id: 1, title: 'The Trials of Brother Jero', rating: 8, authorId: 1 },
   { id: 2, title: 'Half of a Yellow Sun', rating: 9, authorId: 3 },
@@ -19,7 +21,8 @@ const resolvers = {
     books: () => books,
     book: (_, { id }) => books.find(book => book.id === id),
     author: (_, { id }) => authors.find(author => author.id === id),
-    sayHello: (parent, args, context) => 'Hello World!'
+    sayHello: (parent, args, context) => 'Hello World!',
+    sampleMflix
   },
   Mutation: {
     addBook: (_, { title, rating, authorId }) => {
@@ -44,4 +47,4 @@ const resolvers = {
   }
 };
 
-module.exports = resolvers;
+export default resolvers;

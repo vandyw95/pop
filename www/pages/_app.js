@@ -1,5 +1,4 @@
-import React from 'react';
-import App, { Container } from 'next/app';
+import App from 'next/app';
 import { ThemeProvider } from 'styled-components';
 
 import Layout from 'layout';
@@ -7,7 +6,7 @@ import Layout from 'layout';
 import GlobalStyles from 'global-styles';
 import { DEFAULT_THEME } from 'styled-theme';
 
-export default class MyApp extends App {
+export default class extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
 
@@ -22,14 +21,15 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      <Container>
+      <>
         <GlobalStyles />
+
         <ThemeProvider theme={DEFAULT_THEME}>
           <Layout>
             <Component {...pageProps} />
           </Layout>
         </ThemeProvider>
-      </Container>
+      </>
     );
   }
 }

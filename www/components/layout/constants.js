@@ -7,5 +7,5 @@ export const MENUS = [
 export const MENU_URL = {
   home: '/',
   setting: '/setting',
-  me: '/me'
+  me: '/profile'
 };
