@@ -6,8 +6,14 @@ import resolvers from './resolvers';
 const apolloServer = new ApolloServer({
   typeDefs,
   resolvers,
-  // introspection: true,
-  playground: true
+  // introspection: false,
+  introspection: true,
+  playground: true,
 });
+
+// export default () => {
+//   console.log('Hello request');
+//   return apolloServer.createHandler({ path: '/api/graphql' });
+// };
 
 export default apolloServer.createHandler({ path: '/api/graphql' });

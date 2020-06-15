@@ -1,13 +1,11 @@
-import books from './books';
+export { default as books } from './books';
 import book from './book';
 import author from './author';
 import sayHello from './sayHello';
-import sampleMflix from './sampleMflix';
+export { default as getMflix } from './getMflix';
 
 export default {
-  books,
   book,
   author,
   sayHello,
-  sampleMflix
 };
